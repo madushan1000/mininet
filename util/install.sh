@@ -161,7 +161,7 @@ function of {
     else
         $install git-core autotools-dev pkg-config libc6-dev
     fi
-    git clone git://openflowswitch.org/openflow.git
+    git clone https://github.com/noxrepo/openflow 
     cd $BUILD_DIR/openflow
 
     # Patch controller to handle more than 16 switches
@@ -403,7 +403,7 @@ function ivs {
 
     # Install IVS from source
     cd $BUILD_DIR
-    git clone git://github.com/floodlight/ivs $IVS_SRC --recursive
+    git clone https://github.com/floodlight/ivs $IVS_SRC --recursive
     cd $IVS_SRC
     make
     sudo make install
@@ -431,7 +431,7 @@ function ryu {
     fi
     # fetch RYU
     cd $BUILD_DIR/
-    git clone git://github.com/osrg/ryu.git ryu
+    git clone https://github.com/osrg/ryu.git ryu
     cd ryu
 
     # install ryu
@@ -539,7 +539,7 @@ function oftest {
 
     # Install oftest:
     cd $BUILD_DIR/
-    git clone git://github.com/floodlight/oftest
+    git clone https://github.com/floodlight/oftest
 }
 
 # Install cbench
@@ -552,7 +552,7 @@ function cbench {
         $install libsnmp-dev libpcap-dev libconfig-dev
     fi
     cd $BUILD_DIR/
-    git clone git://gitosis.stanford.edu/oflops.git
+    git clone https://github.com/andi-bigswitch/oflops 
     cd oflops
     sh boot.sh || true # possible error in autoreconf, so run twice
     sh boot.sh
